@@ -1,13 +1,8 @@
-
-
-
-
 select
-
+a.machine_id, ROUND(AVG(a2.timestamp - a1.timestamp)) as processing_time
 from 
 activity as a1,
 activity as a2
-
 where a1.activity_type = 'start' 
 and a2.activity_type = 'end'
 and a1.process_id = a2.process_id
